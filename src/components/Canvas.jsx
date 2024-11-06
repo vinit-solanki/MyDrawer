@@ -101,7 +101,7 @@ function Canvas({ sectionItems, onSelectFiles, onUpdateElement }) {
                   <Droppable 
                     key={zone.id}
                     droppableId={zone.id}
-                    type="ASSET"
+                    type="DRAGGABLE"
                   >
                     {(provided, snapshot) => (
                       <div

@@ -19,7 +19,7 @@ const Assets = ({ assets, onUpdateAsset, onSelectAssets }) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-4">
       <h2 className="text-xl font-semibold mb-4 text-gray-800">Assets</h2>
-      <Droppable droppableId="assets" type="ASSET">
+      <Droppable droppableId="assets" type="DRAGGABLE">
         {(provided, snapshot) => (
           <div
             ref={provided.innerRef}
@@ -34,9 +34,8 @@ const Assets = ({ assets, onUpdateAsset, onSelectAssets }) => {
               {assets.map((asset, index) => (
                 <Draggable
                   key={asset.id}
-                  draggableId={asset.id.toString()}
+                  draggableId={asset.id}
                   index={index}
-                  type="ASSET"
                 >
                   {(provided, snapshot) => (
                     <div
