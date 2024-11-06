@@ -169,8 +169,8 @@ const App = () => {
           onSave={handleSave}
           onLoad={handleLoad}
         />
-        <div className="flex flex-row flex-grow w-full p-3">
-          <div className="w-1/3 mx-auto px-3 md:px-4">
+        <div className="flex flex-col lg:flex-row flex-grow w-full p-3">
+          <div className="w-full lg:w-1/3 mb-6 lg:mb-0 px-3 md:px-4">
             <Assets
               assets={uploadedFiles}
               onUpdateAsset={handleUpdateAsset}
@@ -178,7 +178,7 @@ const App = () => {
             />
           </div>
 
-          <div className="max-w-[1920px] w-full mx-auto px-3 md:px-4">
+          <div className="w-full lg:max-w-[1920px] px-3 md:px-4">
             <Canvas
               sectionItems={sectionItems}
               onSelectFiles={handleSelectFiles}
