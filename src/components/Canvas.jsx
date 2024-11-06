@@ -88,7 +88,7 @@ function Canvas({ sectionItems, onSelectFiles, onUpdateElement }) {
         {SECTIONS.map(section => (
           <div 
             key={section.id}
-            className={`w-full ${section.bg} p-8 gap-x-3 border-b border-gray-200 transition-all duration-300`}
+            className={`w-full ${section.bg} p-4 md:p-8 gap-x-3 border-b border-gray-200 transition-all duration-300`}
             style={{ minHeight: section.minHeight }}
           >
             <div className='max-w-7xl mx-auto w-full flex flex-col gap-y-1'>
@@ -96,7 +96,7 @@ function Canvas({ sectionItems, onSelectFiles, onUpdateElement }) {
                 {section.title}
               </div>
               
-              <div className="flex flex-wrap w-full justify-evenly">
+              <div className="flex flex-col md:flex-row w-full justify-evenly">
                 {section.dropZones.map(zone => (
                   <Droppable 
                     key={zone.id}
@@ -108,7 +108,7 @@ function Canvas({ sectionItems, onSelectFiles, onUpdateElement }) {
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                         className={`
-                          ${zone.width} p-3
+                          w-full md:${zone.width} p-3 mb-4 md:mb-0
                           min-h-[120px] rounded-lg
                           ${snapshot.isDraggingOver 
                             ? 'bg-blue-50 border-2 border-dashed border-blue-300' 
